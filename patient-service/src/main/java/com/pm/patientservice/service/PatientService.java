@@ -8,6 +8,7 @@ import com.pm.patientservice.mapper.PatientMapper;
 import com.pm.patientservice.model.Patient;
 import com.pm.patientservice.repository.PatientRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -42,7 +43,7 @@ public class PatientService {
     public PatientResponseDTO updatePatient(UUID patientId, PatientRequestDTO patientRequestDTO) {
         Patient patient = patientRepository.findById(patientId).orElseThrow(() -> new PatientNotFoundException("Patient not found: " + patientId));
 
-        if (patientRepository.existsByEmail(patientRequestDTO.getEmail())) {
+        if (patientRepository.existsByEmailAndIdNot(patientRequestDTO.getEmail(), patientId)) {
             throw new EmailAlreadyExistsException("A patient with email " + patientRequestDTO.getEmail() + " already exists.");
         }
         patient.setName(patientRequestDTO.getName());
@@ -52,6 +53,10 @@ public class PatientService {
 
         Patient updatedPatient = patientRepository.save(patient);
         return PatientMapper.toPatientResponseDTO(updatedPatient);
+    }
+
+    public void deletePatient(UUID patientId) {
+        patientRepository.deleteById(patientId);
     }
 
 }
