@@ -1,0 +1,12 @@
+### Create a new patient entity
+PUT http://localhost:8080/patients/4acf7463-1bdd-46be-a006-3adc436de3f8
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "test2@example.com",
+  "address": "123 Main St",
+  "dateOfBirth": "1995-09-09"
+}
+
+###
