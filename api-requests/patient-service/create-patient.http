@@ -3,8 +3,8 @@ POST http://localhost:8080/patients
 Content-Type: application/json
 
 {
-  "name": "Harjot Singh",
-  "email": "harjot01@gmail.com",
+  "name": "Harjot Singh kafka",
+  "email": "harjot05@gmail.com",
   "address": "123 Main St",
   "dateOfBirth": "1995-09-09",
   "registeredDate": "2023-11-11"
