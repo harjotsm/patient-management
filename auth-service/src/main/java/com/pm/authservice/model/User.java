@@ -6,7 +6,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "users")
-public class UserClass {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
