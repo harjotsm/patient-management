@@ -119,7 +119,7 @@ This system follows a microservices architecture pattern with the following comp
 - **AWS CloudFormation** - Infrastructure as Code (IaC)
 - **LocalStack** - Local AWS cloud environment for development
 
-### Cloud Infrastructure
+### Cloud Infrastructure - Work in Progress
 - **AWS ECS (Elastic Container Service)** - Container orchestration
 - **AWS RDS (Relational Database Service)** - Managed PostgreSQL databases
 - **AWS MSK (Managed Streaming for Kafka)** - Managed Kafka clusters
