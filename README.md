@@ -459,11 +459,6 @@ Consider adding:
 ## 📝 License
 
 This project is licensed under the MIT License.
-
-## 👥 Contact
-
-For questions or support, please contact the development team.
-
 ---
 
 **Note**: This is a learning/demonstration project showcasing microservices architecture patterns, communication protocols (REST, gRPC, Kafka), and modern Spring Boot practices.
