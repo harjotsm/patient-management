@@ -2,7 +2,7 @@
 
 A comprehensive microservices-based patient management system built with Spring Boot, featuring REST APIs, gRPC communication, event-driven architecture with Kafka, and JWT-based authentication. **Currently working on** automating the entire cloud infrastructure (ECS, RDS, MSK) using Infrastructure as Code (IaC) with AWS CloudFormation and LocalStack.
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 This system follows a microservices architecture pattern with the following components:
 
@@ -27,7 +27,7 @@ This system follows a microservices architecture pattern with the following comp
        (gRPC)            (Kafka)
 ```
 
-## 🚀 Services
+## Services
 
 ### 1. **API Gateway** (Port: TBD)
 - **Technology**: Spring Cloud Gateway
@@ -84,7 +84,7 @@ This system follows a microservices architecture pattern with the following comp
 - Comprehensive integration testing suite
 - End-to-end testing across microservices
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Backend Framework
 - **Java 17**
@@ -127,7 +127,7 @@ This system follows a microservices architecture pattern with the following comp
 - **AWS CloudFormation** - Infrastructure as Code (IaC)
 - **LocalStack** - Local AWS cloud environment for development
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Java 17+** installed
 - **Maven 3.9+** installed
@@ -137,7 +137,7 @@ This system follows a microservices architecture pattern with the following comp
 - **AWS CLI** (for CloudFormation deployment)
 - **LocalStack** (for local AWS development and testing)
 
-## 🚦 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 ```bash
@@ -230,7 +230,7 @@ docker run -d analytics-service
 docker run -d -p 8000:8000 api-gateway
 ```
 
-## 📚 API Documentation
+## API Documentation
 
 ### Patient Service API
 
@@ -323,7 +323,7 @@ GRPC localhost:9001/BillingService.CreateBillingAccount
 Access interactive API documentation:
 - Patient Service: `http://localhost:8080/swagger-ui.html`
 
-## 🔄 Event Flow
+## Event Flow
 
 ### Patient Event Processing
 1. Client creates/updates/deletes a patient via REST API
@@ -338,7 +338,7 @@ Access interactive API documentation:
 - `PATIENT_UPDATED`
 - `PATIENT_DELETED`
 
-## 🧪 Testing
+## Testing
 
 ### Unit Tests
 ```bash
@@ -361,7 +361,7 @@ HTTP request files are provided in the `api-requests/` directory:
 
 Use IntelliJ IDEA's HTTP Client or similar tools to execute these requests.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 patient-management/
@@ -378,11 +378,11 @@ patient-management/
     └── billing-service/
 ```
 
-## 🔐 Security
+## Security
 
 - **JWT Authentication**: All protected endpoints require valid JWT tokens
 - **Password Encryption**: User passwords are encrypted using BCrypt
-## ☁️ Cloud Infrastructure (AWS) - Work in Progress
+## Cloud Infrastructure (AWS) - Work in Progress
 
 This project is **currently being developed** to include **Infrastructure as Code (IaC)** automation using AWS CloudFormation templates for complete cloud infrastructure provisioning.
 
@@ -420,46 +420,17 @@ The CloudFormation templates automatically provision:
 - **Token Validation**: Tokens are validated on each request to protected resources
 - **HTTPS**: Should be configured for production deployment
 
-## 🐳 Docker Support
+## Docker Support
 
 Each service includes a multi-stage Dockerfile optimized for production:
 - **Builder stage**: Compiles the application with Maven
 - **Runner stage**: Creates lightweight runtime image with only JRE
 - Base images use Eclipse Temurin OpenJDK 21
 
-## 📊 Monitoring & Observability
+## Monitoring & Observability
 
 Consider adding:
 - Spring Boot Actuator for health checks
 - Distributed tracing (Zipkin/Jaeger)
 - Centralized logging (ELK stack)
 - Metrics collection (Prometheus + Grafana)
-
-## 🚧 Future Enhancements
-
-- [⏳] Infrastructure as Code with AWS CloudFormation (In Progress)
-- [⏳] AWS ECS, RDS, and MSK provisioning (In Progress)
-- [⏳] LocalStack for local development (In Progress)
-- [ ] Service discovery (Eureka)
-- [ ] Centralized configuration (Spring Cloud Config)
-- [ ] Rate limiting
-- [ ] API versioning
-- [ ] Comprehensive monitoring and alerting
-- [ ] Kubernetes deployment manifests
-- [ ] CI/CD pipeline configuration
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License.
----
-
-**Note**: This is a learning/demonstration project showcasing microservices architecture patterns, communication protocols (REST, gRPC, Kafka), and modern Spring Boot practices.
-
